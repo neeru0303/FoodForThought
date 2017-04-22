@@ -97,9 +97,10 @@ doc = nlp(u'cheese burger and  pizza  eggnog tofu yogurt banana apple')
 matcher(doc)
 
 
-
-os.chdir("/home/nir0303/independentstudy/data")
-for i,j,k in os.walk("/home/nir0303/independentstudy/data"):
+p = os.getcwd()
+p = os.path.join(p,"data")
+os.chdir(p)
+for i,j,k in os.walk(p):
 	for file in k:
 		#datafile = os.path.join(i,file)
 		with open(file,'r') as f:
