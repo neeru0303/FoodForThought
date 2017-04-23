@@ -31,13 +31,13 @@ def extractMentionReviews(text):
 			#print ent,type(ent.string)
 			#print dir(ent)
 			s+=ent.text+" "
-			print "mention is {}".format(s)
+	print "mention is {}".format(s)
 	return s
 
   			
 
 
-cnt=4
+cnt=5
 def createMatcher(x):
 	global cnt
 	x=re.split(r'[,|\s]*',i)
@@ -93,6 +93,19 @@ matcher = spacy.matcher.Matcher(nlp.vocab)
 matcher.add(entity_key='1', label='FOOD', attrs={}, specs=[[{spacy.attrs.LOWER: 'curly'}, {spacy.attrs.LOWER: 'fries'}]], on_match=merge_phrases)
 matcher.add(entity_key='2', label='FOOD', attrs={}, specs=[[{spacy.attrs.LOWER: 'pizza'}]], on_match=merge_phrases)
 matcher.add(entity_key='3', label='FOOD', attrs={}, specs=[[{spacy.attrs.LOWER: 'cheese'}, {spacy.attrs.LOWER: 'burger'}]], on_match=merge_phrases)
+matcher.add_pattern(
+    '4',
+    [ 
+        { 
+          spacy.attrs.LOWER: "potatoes"
+        },
+        
+        
+        {spacy.attrs.IS_PUNCT: True},
+        
+    ],
+    label='FOOD' 
+)
 doc = nlp(u'cheese burger and  pizza  eggnog tofu yogurt banana apple')
 matcher(doc)
 
@@ -103,10 +116,12 @@ os.chdir(p)
 for i,j,k in os.walk(p):
 	for file in k:
 		#datafile = os.path.join(i,file)
+		print file
 		with open(file,'r') as f:
 			for i in f.readlines():
 				i=i.decode("utf-8")
 				i=i.lower().strip().replace('\n','').replace(r"\(.*\)","")
+
 				createMatcher(i)
 				
 
