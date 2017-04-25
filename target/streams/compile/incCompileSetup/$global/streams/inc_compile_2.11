@@ -1,0 +1,127 @@
+format version: 5
+output mode:
+1 items
+0 -> single
+output directories:
+1 items
+output dir -> /home/nir0303/independentstudy/FoodForThought/target/scala-2.11/classes
+compile options:
+0 items
+javac options:
+0 items
+compiler version:
+1 items
+0 -> 2.11.8
+compile order:
+1 items
+0 -> Mixed
+name hashing:
+1 items
+0 -> true
+products:
+3 items
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> /home/nir0303/independentstudy/FoodForThought/target/scala-2.11/classes/sample$.class
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> /home/nir0303/independentstudy/FoodForThought/target/scala-2.11/classes/sample$delayedInit$body.class
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> /home/nir0303/independentstudy/FoodForThought/target/scala-2.11/classes/sample.class
+binary dependencies:
+5 items
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> /home/nir0303/.ivy2/cache/org.apache.spark/spark-catalyst_2.11/jars/spark-catalyst_2.11-2.1.0.jar
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> /home/nir0303/.ivy2/cache/org.apache.spark/spark-core_2.11/jars/spark-core_2.11-2.1.0.jar
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> /home/nir0303/.ivy2/cache/org.apache.spark/spark-sql_2.11/jars/spark-sql_2.11-2.1.0.jar
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> /home/nir0303/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> /usr/lib/jvm/java-8-oracle/jre/lib/rt.jar
+direct source dependencies:
+0 items
+direct external dependencies:
+0 items
+public inherited source dependencies:
+0 items
+public inherited external dependencies:
+0 items
+member reference internal dependencies:
+0 items
+member reference external dependencies:
+0 items
+inheritance internal dependencies:
+0 items
+inheritance external dependencies:
+0 items
+class names:
+3 items
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> sample
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> sample$
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> sample$delayedInit$body
+used names:
+37 items
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> <init>
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> Any
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> App
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> Builder
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> DataFrame
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> DataFrameReader
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> DataFrameWriter
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> Dataset
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> Int
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> Object
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> Predef
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> Row
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> SparkContext
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> SparkSession
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> String
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> Unit
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> apache
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> appName
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> builder
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> format
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> getOrCreate
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> limit
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> limitDf
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> load
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> org
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> package
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> printSchema
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> println
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> read
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> reviewsDf
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> sample
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> save
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> sc
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> scala
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> spark
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> sql
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> write
+product stamps:
+3 items
+/home/nir0303/independentstudy/FoodForThought/target/scala-2.11/classes/sample$.class -> lastModified(1493136092000)
+/home/nir0303/independentstudy/FoodForThought/target/scala-2.11/classes/sample$delayedInit$body.class -> lastModified(1493136092000)
+/home/nir0303/independentstudy/FoodForThought/target/scala-2.11/classes/sample.class -> lastModified(1493136092000)
+source stamps:
+1 items
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> hash(6ea83724b4a13f0aca3c7cd8261d68c432f9ad3f)
+binary stamps:
+5 items
+/home/nir0303/.ivy2/cache/org.apache.spark/spark-catalyst_2.11/jars/spark-catalyst_2.11-2.1.0.jar -> lastModified(1481872148000)
+/home/nir0303/.ivy2/cache/org.apache.spark/spark-core_2.11/jars/spark-core_2.11-2.1.0.jar -> lastModified(1481871925000)
+/home/nir0303/.ivy2/cache/org.apache.spark/spark-sql_2.11/jars/spark-sql_2.11-2.1.0.jar -> lastModified(1481872304000)
+/home/nir0303/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar -> lastModified(1457105192000)
+/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar -> lastModified(1485133807000)
+class names:
+5 items
+/home/nir0303/.ivy2/cache/org.apache.spark/spark-catalyst_2.11/jars/spark-catalyst_2.11-2.1.0.jar -> org.apache.spark.sql.Row
+/home/nir0303/.ivy2/cache/org.apache.spark/spark-core_2.11/jars/spark-core_2.11-2.1.0.jar -> org.apache.spark.SparkContext
+/home/nir0303/.ivy2/cache/org.apache.spark/spark-sql_2.11/jars/spark-sql_2.11-2.1.0.jar -> org.apache.spark.sql.SparkSession
+/home/nir0303/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar -> scala.App
+/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar -> java.lang.Object
+internal apis:
+1 items
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlSjH5SdlLSkQCAAdJAAdhcGlIYXNoWgAIaGFzTWFjcm9aABBoYXNQYWNrYWdlT2JqZWN0TAAYX2ludGVybmFsT25seV9uYW1lSGFzaGVzdAAkTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoZXM7TAADYXBpdAAVTHhzYnRpL2FwaS9Tb3VyY2VBUEk7TAALY29tcGlsYXRpb250ABdMeHNidGkvYXBpL0NvbXBpbGF0aW9uO1sABGhhc2h0AAJbQnhwoIqTcwAAc3IAInhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoZXNU2r6Z+tTsTAIAAlsAD2ltcGxpY2l0TWVtYmVyc3QAI1tMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2g7WwAOcmVndWxhck1lbWJlcnNxAH4AB3hwdXIAI1tMeHNidGkuYXBpLl9pbnRlcm5hbE9ubHlfTmFtZUhhc2g7SVqAtt2Wi/QCAAB4cAAAAAB1cQB+AAkAAAAdc3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwjPLak3QABm5vdGlmeXNxAH4ADA2xyNV0AAR3YWl0c3EAfgAMtIxzBHQADSRhc0luc3RhbmNlT2ZzcQB+AAzAZooGdAAGZXF1YWxzc3EAfgAM4fjeQnQADGFzSW5zdGFuY2VPZnNxAH4ADKOnIjB0AA5leGVjdXRpb25TdGFydHNxAH4ADBwOvGN0AAxzeW5jaHJvbml6ZWRzcQB+AAwF1AUldAACc2NzcQB+AAziP2pudAANJGlzSW5zdGFuY2VPZnNxAH4ADN46JMF0AARtYWluc3EAfgAMsX+5z3QACW5vdGlmeUFsbHNxAH4ADG9zZsB0AAxpc0luc3RhbmNlT2ZzcQB+AAymPBKNdAAFc3BhcmtzcQB+AAwuXXZCdAACPT1zcQB+AAxd/0KadAAJcmV2aWV3c0Rmc3EAfgAMcUsx+XQABWNsb25lc3EAfgAMZMFn1nQABiRpbml0JHNxAH4ADFYHUPZ0AAZzYW1wbGVzcQB+AAzZknhVdAAIdG9TdHJpbmdzcQB+AAzKpzuidAAEYXJnc3NxAH4ADJN27gV0AAIhPXNxAH4ADOkfNqJ0AAhnZXRDbGFzc3NxAH4ADEUPhNJ0AAJuZXNxAH4ADNmKAPt0AAdsaW1pdERmc3EAfgAMZ5Lgz3QAAmVxc3EAfgAMiKLL83QAC2RlbGF5ZWRJbml0c3EAfgAM3eP56XQAAiMjc3EAfgAM1SnAInQACGZpbmFsaXplc3EAfgAMpDFk63QACGhhc2hDb2Rlc3IAE3hzYnRpLmFwaS5Tb3VyY2VBUEm5Xqf5KSM4pAIAAlsAC2RlZmluaXRpb25zdAAXW0x4c2J0aS9hcGkvRGVmaW5pdGlvbjtbAAhwYWNrYWdlc3QAFFtMeHNidGkvYXBpL1BhY2thZ2U7eHB1cgAXW0x4c2J0aS5hcGkuRGVmaW5pdGlvbjuIyVzntONeDgIAAHhwAAAAAXNyABN4c2J0aS5hcGkuQ2xhc3NMaWtlgzQcod+wl2wCAARMAA5kZWZpbml0aW9uVHlwZXQAGkx4c2J0aS9hcGkvRGVmaW5pdGlvblR5cGU7WwAQc2F2ZWRBbm5vdGF0aW9uc3QAE1tMamF2YS9sYW5nL1N0cmluZztMAAhzZWxmVHlwZXQAEEx4c2J0aS9hcGkvTGF6eTtMAAlzdHJ1Y3R1cmVxAH4AUXhyACF4c2J0aS5hcGkuUGFyYW1ldGVyaXplZERlZmluaXRpb275EW6x1VA84gIAAVsADnR5cGVQYXJhbWV0ZXJzdAAaW0x4c2J0aS9hcGkvVHlwZVBhcmFtZXRlcjt4cgAUeHNidGkuYXBpLkRlZmluaXRpb26HKhvocULjRgIABEwABmFjY2Vzc3QAEkx4c2J0aS9hcGkvQWNjZXNzO1sAC2Fubm90YXRpb25zdAAXW0x4c2J0aS9hcGkvQW5ub3RhdGlvbjtMAAltb2RpZmllcnN0ABVMeHNidGkvYXBpL01vZGlmaWVycztMAARuYW1lcQB+AA14cHNyABB4c2J0aS5hcGkuUHVibGljulg9rmwtYEICAAB4cgAQeHNidGkuYXBpLkFjY2Vzc91imvgdYzFIAgAAeHB1cgAXW0x4c2J0aS5hcGkuQW5ub3RhdGlvbjvrl+sZEPaNSAIAAHhwAAAAAHNyABN4c2J0aS5hcGkuTW9kaWZpZXJzl+dh3BMme7MCAAFCAAVmbGFnc3hwAHEAfgAxdXIAGltMeHNidGkuYXBpLlR5cGVQYXJhbWV0ZXI72W0mDyid8rYCAAB4cAAAAAB+cgAYeHNidGkuYXBpLkRlZmluaXRpb25UeXBlAAAAAAAAAAASAAB4cgAOamF2YS5sYW5nLkVudW0AAAAAAAAAABIAAHhwdAAGTW9kdWxldXIAE1tMamF2YS5sYW5nLlN0cmluZzut0lbn6R17RwIAAHhwAAAAAnQAGnNjYWxhLmRlcHJlY2F0ZWRPdmVycmlkaW5ndAAQc2NhbGEuZGVwcmVjYXRlZHNyACF4c2J0aS5hcGkuQWJzdHJhY3RMYXp5JFN0cmljdExhenkNZhxrKRYquAIAAUwABXZhbHVldAASTGphdmEvbGFuZy9PYmplY3Q7eHBzcgATeHNidGkuYXBpLkVtcHR5VHlwZbz9nkZJO4kkAgAAeHIAFHhzYnRpLmFwaS5TaW1wbGVUeXBlcnhiiCEjv0ACAAB4cgAOeHNidGkuYXBpLlR5cGU/atkhFkmqygIAAHhwc3EAfgBqc3IAE3hzYnRpLmFwaS5TdHJ1Y3R1cmWpqvmAk2/YAAIAA0wACGRlY2xhcmVkcQB+AFFMAAlpbmhlcml0ZWRxAH4AUUwAB3BhcmVudHNxAH4AUXhxAH4Ab3NxAH4AanVxAH4ATAAAAABzcQB+AGp1cQB+AEwAAAABc3IADXhzYnRpLmFwaS5EZWZSvp/ifLQ2aQIAAkwACnJldHVyblR5cGV0ABBMeHNidGkvYXBpL1R5cGU7WwAPdmFsdWVQYXJhbWV0ZXJzdAAaW0x4c2J0aS9hcGkvUGFyYW1ldGVyTGlzdDt4cQB+AFJxAH4AW3VxAH4AXAAAAAFzcgAUeHNidGkuYXBpLkFubm90YXRpb27eDoGi9lwKsgIAAlsACWFyZ3VtZW50c3QAH1tMeHNidGkvYXBpL0Fubm90YXRpb25Bcmd1bWVudDtMAARiYXNlcQB+AHl4cHVyAB9bTHhzYnRpLmFwaS5Bbm5vdGF0aW9uQXJndW1lbnQ7UZ2mjzglD3gCAAB4cAAAAAFzcgAceHNidGkuYXBpLkFubm90YXRpb25Bcmd1bWVudNZFsdgDGxd8AgACTAAEbmFtZXEAfgANTAAFdmFsdWVxAH4ADXhwdAAAdAAqKCJtYWluIHNob3VsZCBub3QgYmUgb3ZlcnJpZGRlbiIsIjIuMTEuMCIpc3IAFHhzYnRpLmFwaS5Qcm9qZWN0aW9u89KNVOlFpC0CAAJMAAJpZHEAfgANTAAGcHJlZml4dAAWTHhzYnRpL2FwaS9TaW1wbGVUeXBlO3hxAH4AbnQAFGRlcHJlY2F0ZWRPdmVycmlkaW5nc3IAE3hzYnRpLmFwaS5TaW5nbGV0b278p1/4z1bkRgIAAUwABHBhdGh0ABBMeHNidGkvYXBpL1BhdGg7eHEAfgBuc3IADnhzYnRpLmFwaS5QYXRomz1cCM6lJ4QCAAFbAApjb21wb25lbnRzdAAaW0x4c2J0aS9hcGkvUGF0aENvbXBvbmVudDt4cHVyABpbTHhzYnRpLmFwaS5QYXRoQ29tcG9uZW50O0PaCXQtZxZ0AgAAeHAAAAACc3IADHhzYnRpLmFwaS5JZJgybIs3U8RAAgABTAACaWRxAH4ADXhyABd4c2J0aS5hcGkuUGF0aENvbXBvbmVudF+aIlsuhp+8AgAAeHB0AAVzY2FsYXNyAA54c2J0aS5hcGkuVGhpc9sJ7abMWkBcAgAAeHEAfgCTc3EAfgBeAHEAfgAhdXEAfgBgAAAAAHNxAH4AhnQABFVuaXRxAH4AjHVyABpbTHhzYnRpLmFwaS5QYXJhbWV0ZXJMaXN0O/XTOh3ys3DuAgAAeHAAAAABc3IAF3hzYnRpLmFwaS5QYXJhbWV0ZXJMaXN01sW8HGRJdOMCAAJaAAppc0ltcGxpY2l0WwAKcGFyYW1ldGVyc3QAHFtMeHNidGkvYXBpL01ldGhvZFBhcmFtZXRlcjt4cAB1cgAcW0x4c2J0aS5hcGkuTWV0aG9kUGFyYW1ldGVyO8+4xV2l3bVtAgAAeHAAAAABc3IAGXhzYnRpLmFwaS5NZXRob2RQYXJhbWV0ZXIfRa4X00mw6gIABFoACmhhc0RlZmF1bHRMAAhtb2RpZmllcnQAHUx4c2J0aS9hcGkvUGFyYW1ldGVyTW9kaWZpZXI7TAAEbmFtZXEAfgANTAADdHBlcQB+AHl4cAB+cgAbeHNidGkuYXBpLlBhcmFtZXRlck1vZGlmaWVyAAAAAAAAAAASAAB4cQB+AGN0AAVQbGFpbnEAfgA1c3IAF3hzYnRpLmFwaS5QYXJhbWV0ZXJpemVkFmzuaQPJu38CAAJMAAhiYXNlVHlwZXEAfgCHWwANdHlwZUFyZ3VtZW50c3QAEVtMeHNidGkvYXBpL1R5cGU7eHEAfgBuc3EAfgCGdAAFQXJyYXlxAH4AjHVyABFbTHhzYnRpLmFwaS5UeXBlO3T/pVp7+elBAgAAeHAAAAABc3EAfgCGdAAGU3RyaW5nc3EAfgCKc3EAfgCNdXEAfgCQAAAAA3NxAH4AknQABGphdmFzcQB+AJJ0AARsYW5ncQB+AJdzcQB+AGp1cQB+AK4AAAAEc3EAfgCGdAADQXBwcQB+AIxzcQB+AIZ0AAtEZWxheWVkSW5pdHEAfgCMc3EAfgCGdAAGT2JqZWN0cQB+ALJzcQB+AIZ0AANBbnlxAH4AjHVyABRbTHhzYnRpLmFwaS5QYWNrYWdlO1sTGTdwpyehAgAAeHAAAAAAc3IAFXhzYnRpLmFwaS5Db21waWxhdGlvbu364MNq6KBCAgACSgAJc3RhcnRUaW1lWwAHb3V0cHV0c3QAGltMeHNidGkvYXBpL091dHB1dFNldHRpbmc7eHAAAAFbpdiC0nVyABpbTHhzYnRpLmFwaS5PdXRwdXRTZXR0aW5nO39qwvOnh6VCAgAAeHAAAAABc3IAF3hzYnRpLmFwaS5PdXRwdXRTZXR0aW5netmaR3T7HXsCAAJMAA9vdXRwdXREaXJlY3RvcnlxAH4ADUwAD3NvdXJjZURpcmVjdG9yeXEAfgANeHB0AEcvaG9tZS9uaXIwMzAzL2luZGVwZW5kZW50c3R1ZHkvRm9vZEZvclRob3VnaHQvdGFyZ2V0L3NjYWxhLTIuMTEvY2xhc3Nlc3QAAS91cgACW0Ks8xf4BghU4AIAAHhwAAAAFG6oNyS0oT8Kyjx82CYdaMQy+a0/
+external apis:
+0 items
+source infos:
+1 items
+/home/nir0303/independentstudy/FoodForThought/sample.scala -> 
+AAAAAAAAAAA=
+compilations:
+1 items
+0 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABW6XYgtJ1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQARy9ob21lL25pcjAzMDMvaW5kZXBlbmRlbnRzdHVkeS9Gb29kRm9yVGhvdWdodC90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABLw==

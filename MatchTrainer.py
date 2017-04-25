@@ -3,6 +3,10 @@ import spacy
 import re
 import os
 import json
+import sys
+
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 nlp = spacy.load('en')
 
@@ -33,7 +37,7 @@ def extractMentionReviews(text):
 			s+=ent.text+" "
 	if s!="":
 		print "mention is {}".format(s)
-	return s
+	return s.encode('ascii', 'ignore')
 
   			
 
@@ -129,12 +133,14 @@ for i,j,k in os.walk(p):
 		#datafile = os.path.join(i,file)
 		print file
 		with open(file,'r') as f:
+			if file.endswith("txt")==False:
+				continue
 			for i in f.readlines():
 				i=i.decode("utf-8")
 				i=i.lower().strip().replace('\n','').replace(r"\(.*\)","")
 
 				createMatcher(i)
-				
+	break	
 
 
 
@@ -157,13 +163,11 @@ for ent in doc:
 
 
 with open("mention.txt","w") as mention: 
-	with open("reviews100.json") as reviews:
+	with open("reviews100000.json") as reviews:
 		for cnt,i in enumerate(reviews.readlines()):
 			x=json.loads(i)
-			x=x['text'].strip().replace('\n',' ')
+			x=x['text'].encode('utf-8').strip().decode('utf-8').replace('\n',' ')
 			mentiontext=extractMentionReviews(x)
 			if mentiontext!="":
 				mention.write(x+"~"+mentiontext)
 				mention.write("\n")
-			if cnt==80:
-				break

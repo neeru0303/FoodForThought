@@ -99,14 +99,14 @@ Purslane
 Radicchio
 Radish
 Rutabaga
-Sea Vegetables- see Sea Vegetable List
+Sea Vegetables
 Shallots
 Spinach
 Squash- see Squash List
 Sweet Potato
 Swiss Chard
 Taro
-Tomatillo
+Tomatillo	
 Tomato
 Turnip
 Water Chestnut
@@ -120,3 +120,139 @@ lettuce
 romaine
 carrot
 tomato
+salad
+pickles
+cranberry
+sushi
+tuna roll
+tuna
+shrimps
+coffee
+tea
+milk
+corn beef
+appetizers
+fried pickles
+chips
+burger
+baked potato
+fries
+CLASSIC BURGER
+sandwich 
+chicken
+steamed potatoes
+coke
+burgers
+Dry corned beef
+lettuce wraps
+California Roll
+Rice Krispies
+Khotan beef
+crispy walnut shrimp
+shrimp
+cupcakes
+cashew chicken
+kabob
+kabobs
+smoothie
+thai chicken
+roasted pork
+black beans
+smoothies
+wraps
+tortilla chips
+sour cream
+Buffalo Chicken Pie
+burrito
+Pie
+cilantro
+pepperoni
+mozzarella
+avocado cream sauce
+cheddar pocket pie
+doughnuts
+doughnut
+ice cream
+hot dog
+hot dogs
+tacos
+taco
+french fries
+curly fries
+onion rings
+cheese sandwich
+grill cheese
+burrito
+burrito bowl
+steak 
+sausage
+sour cream
+salsa
+Paneer
+cauliflower
+Cookies
+almond
+ramen noodles
+soy sauce
+pasta
+egg roll
+spicy BBQ chicken
+BBQ chicken
+french toast
+fried chicken
+Beef Brisket
+Beef
+pork
+apple slices
+mac and cheese
+mushroom
+mushrooms
+pastries
+smoked salmon
+tea
+Chana Masala 
+biryani
+lassi
+Mexican eggnog
+green beans
+corncake
+BBQ pork
+chicken nuggets
+chocolate spice cake
+cake
+chocolate cake
+smoked trout
+chicken gyro
+lamb
+salmon
+chicken fingers
+pancakes
+strawberry milkshake
+milkshake
+banana milkshake
+salads
+butter
+cheese
+burritos
+chicken burrito
+chicken burritos
+Steaks
+baked potato
+egg
+oyster saucetofu
+rice noodles
+tofu
+pickled onion crisps
+onion crisps
+fried rice
+black bean sauce
+vegetable curry
+chocolate fudge
+caramel
+bacon
+cheese bread
+Pepperoni pizza
+Potato Salad
+Pasta Salad
+frozen yogurt
+corn bread
