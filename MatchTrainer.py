@@ -31,7 +31,8 @@ def extractMentionReviews(text):
 			#print ent,type(ent.string)
 			#print dir(ent)
 			s+=ent.text+" "
-	print "mention is {}".format(s)
+	if s!="":
+		print "mention is {}".format(s)
 	return s
 
   			
@@ -43,19 +44,29 @@ def createMatcher(x):
 	x=re.split(r'[,|\s]*',i)
 	if len(x)==1:
 		#print x
+		cnt+=1
 		matcher.add(entity_key=str(cnt), label='FOOD', attrs={}, specs=[[{spacy.attrs.LOWER: x[0]}]], on_match=merge_phrases)
 		cnt+=1
+		matcher.add(entity_key=str(cnt), label='FOOD', attrs={}, specs=[[{spacy.attrs.LOWER: x[0]},{spacy.attrs.IS_PUNCT:True}]], on_match=merge_phrases)
+		
 	elif len(x)==2:
 		cnt+=1
 		matcher.add(entity_key=str(cnt), label='FOOD', attrs={}, specs=[[{spacy.attrs.LOWER: x[0]}, {spacy.attrs.LOWER: x[1]}]], on_match=merge_phrases)
+		cnt+=1
+		matcher.add(entity_key=str(cnt), label='FOOD', attrs={}, specs=[[{spacy.attrs.LOWER: x[0]}, {spacy.attrs.LOWER: x[1]},{spacy.attrs.IS_PUNCT:True} ]], on_match=merge_phrases)
 	elif len(x)==3:
 		cnt+=1
 		#print x
 		matcher.add(entity_key=str(cnt), label='FOOD', attrs={}, specs=[[{spacy.attrs.LOWER: x[0]}, {spacy.attrs.LOWER: x[1]}, {spacy.attrs.LOWER: x[2]}]], on_match=merge_phrases)
+		cnt+=1
+		matcher.add(entity_key=str(cnt), label='FOOD', attrs={}, specs=[[{spacy.attrs.LOWER: x[0]}, {spacy.attrs.LOWER: x[1]}, {spacy.attrs.LOWER: x[2]},{spacy.attrs.IS_PUNCT:True} ]], on_match=merge_phrases)
 	elif len(x)==4:
 		cnt+=1
 		#print x
 		matcher.add(entity_key=str(cnt), label='FOOD', attrs={}, specs=[[{spacy.attrs.LOWER: x[0]}, {spacy.attrs.LOWER: x[1]}, {spacy.attrs.LOWER: x[2]}, {spacy.attrs.LOWER: x[3]}]], on_match=merge_phrases)
+		cnt+=1
+		matcher.add(entity_key=str(cnt), label='FOOD', attrs={}, specs=[[{spacy.attrs.LOWER: x[0]}, {spacy.attrs.LOWER: x[1]}, {spacy.attrs.LOWER: x[2]}, {spacy.attrs.LOWER: x[3]},{spacy.attrs.IS_PUNCT:True} ]], on_match=merge_phrases)
+	
 	elif len(x)==5:
 		cnt+=1
 		#print x
@@ -106,7 +117,7 @@ matcher.add_pattern(
     ],
     label='FOOD' 
 )
-doc = nlp(u'cheese burger and  pizza  eggnog tofu yogurt banana apple')
+doc = nlp(u'cheese burger and  pizza  eggnog tofu yogurt banana apple banana, apple!')
 matcher(doc)
 
 
