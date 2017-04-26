@@ -166,8 +166,8 @@ with open("mention.txt","w") as mention:
 	with open("reviews100000.json") as reviews:
 		for cnt,i in enumerate(reviews.readlines()):
 			x=json.loads(i)
-			x=x['text'].encode('utf-8').strip().decode('utf-8').replace('\n',' ')
-			mentiontext=extractMentionReviews(x)
+			y=x['text'].encode('utf-8').strip().decode('utf-8').replace('\n',' ')
+			mentiontext=extractMentionReviews(y)
 			if mentiontext!="":
-				mention.write(x+"~"+mentiontext)
+				mention.write(x["business_id"]+"~"+y+"~"+mentiontext+"~"+str(x["stars"]))
 				mention.write("\n")
