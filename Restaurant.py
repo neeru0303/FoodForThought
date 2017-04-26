@@ -1,5 +1,6 @@
-items={
-'3EjjtHEFdTZST55js1A18A':['burgers','sweet potato'],
-'3s8PNggIbgeSsjqM6HKOCg':['sandwich.']
-}
-
+class Restaurant:
+	def __init__(self,restaurantid,name,rating):
+		self.restaurantid=restaurantid
+		self.name=name
+		self.rating = rating
+		self.items= []
