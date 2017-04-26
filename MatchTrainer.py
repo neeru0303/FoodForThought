@@ -169,5 +169,5 @@ with open("mention.txt","w") as mention:
 			y=x['text'].encode('utf-8').strip().decode('utf-8').replace('\n',' ')
 			mentiontext=extractMentionReviews(y)
 			if mentiontext!="":
-				mention.write(x["business_id"]+"~"+y+"~"+mentiontext+"~"+str(x["stars"]))
+				mention.write(x["business_id"]+"~"+x["review_id"]+"~"+y+"~"+mentiontext+"~"+str(x["stars"]))
 				mention.write("\n")
