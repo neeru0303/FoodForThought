@@ -38,8 +38,8 @@ readMentions()
 #print type(mentions['apzxETosswLEoNIwHOh7nA'].restaurant)
 exactmatch = Match.ExactMatcher()
 exactmatch.matcher(mentions)
-print mentions['9F_hhfeZVCNgVgIp7vD2Hw'].items
-print 
+print mentions['VmB6OWKb10tEy8o9EyNzYw'].items
+print restaurants['N5dkbfyNWZPxOMWDiJp7TQ'].items
 
 
 

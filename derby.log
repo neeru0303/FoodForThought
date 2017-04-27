@@ -1,7 +1,7 @@
 ----------------------------------------------------------------
-Tue Apr 25 09:47:59 EDT 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-015b-a55e-6491-000009ad4c48 
-on database directory /home/nir0303/independentstudy/FoodForThought/metastore_db with class loader org.apache.spark.sql.hive.client.IsolatedClientLoader$$anon$1@723e3c17 
+Thu Apr 27 08:36:15 EDT 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-015b-af69-6e7b-00000a4dd540 
+on database directory /home/nir0303/independentstudy/FoodForThought/metastore_db with class loader org.apache.spark.sql.hive.client.IsolatedClientLoader$$anon$1@3f6cce7f 
 Loaded from file:/home/nir0303/spark/jars/derby-10.12.1.1.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_121-b13

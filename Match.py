@@ -16,7 +16,7 @@ class Match:
 class ExactMatcher(Match):
 	def doMatch(self,mention):
 		for i in mention.restaurant.items:
-			if i == mention.mention:
+			if i == mention.mention.strip():
 				mention.addItem(i)
 
 class FuzzyMatcher(Match):
