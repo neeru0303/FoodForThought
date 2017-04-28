@@ -36,7 +36,7 @@ class PartialMatcher(Match):
 					cnt+=1
 					matched.append(j)
 			if cnt > len(self.pattern.split(i))/2:
-				print i,mention.reviewid,cnt,mention.mention,matched,self.pattern.split(mention.mention.strip())
+				#print i,mention.reviewid,cnt,mention.mention,matched,self.pattern.split(mention.mention.strip())
 				mention.addItem(i)
 
 		
