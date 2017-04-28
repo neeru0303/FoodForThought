@@ -1,3 +1,4 @@
+from __future__ import division
 import Match
 import json
 
@@ -17,8 +18,8 @@ def readRestaurant():
 			
 	#print restuarants
 
-def writeItemMention():
-	with open("data/mentionWithItems.txt",'w') as wmention:
+def writeItemMention(x):
+	with open("data/mentionWithItems.txt",x) as wmention:
 		for i in mentions:
 			if len(mentions[i].items)!=0:
 				mention=mentions[i]
@@ -44,13 +45,20 @@ def readMentions():
 readRestaurant()
 readMentions()	
 #print type(mentions['apzxETosswLEoNIwHOh7nA'].restaurant)
-#exactmatch = Match.ExactMatcher()
-#exactmatch.matcher(mentions)
+exactmatch = Match.ExactMatcher()
+exactmatch.matcher(mentions)
+writeItemMention('w')
 partialmatch = Match.PartialMatcher()
 partialmatch.matcher(mentions)
+print mentions['Ht3HiWbSPbzAJ7TnQJtKhQ'].bfrmention
+print mentions['Ht3HiWbSPbzAJ7TnQJtKhQ'].mention
 print mentions['VmB6OWKb10tEy8o9EyNzYw'].items
 print restaurants['N5dkbfyNWZPxOMWDiJp7TQ'].items
-writeItemMention()
+writeItemMention('a')
+substringMatch = Match.SubStringMatcher()
+substringMatch.matcher(mentions)
+writeItemMention('a')
+
 
 
 
