@@ -1,4 +1,5 @@
 from Meta import Restaurant,Mention
+import re
 reload
 
 
@@ -6,6 +7,7 @@ class Match:
 	def __init__(self):
 		self.possibleMatches={}
 		self.allReviews={}
+		self.pattern = re.compile(r"\s|,|\.|;|-|\(|\)")
 	def matcher(self,mentions):
 		x=[]
 		for i in mentions:
@@ -25,7 +27,19 @@ class FuzzyMatcher(Match):
 
 class PartialMatcher(Match):
 	def doMatch(self,mention):
-		pass
+		#print "yes"
+		
+		for i in mention.restaurant.items:
+			cnt = 0
+			
+			for j in self.pattern.split(mention.mention.strip()):
+				if j in i:
+					cnt+=1
+			if cnt > len(self.pattern.split(i))/2:
+				print i,mention.reviewid
+				mention.addItem(i)
+
+		
 
 
 class SVMMatcher(Match):

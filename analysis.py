@@ -17,6 +17,14 @@ def readRestaurant():
 			
 	#print restuarants
 
+def writeItemMention():
+	with open("data/mentionWithItems.txt",'w') as wmention:
+		for i in mentions:
+			if len(mentions[i].items)!=0:
+				mention=mentions[i]
+				wmention.write(mention.restaurant.restaurantid+"~"+mention.reviewid+"~"+mention.mention+"~"+mention.sentiment+"~"+"-".join(mention.items)) 
+				wmention.write("\n")
+
 
 def readMentions():
 	with open("data/mention.txt") as mention:
@@ -36,10 +44,13 @@ def readMentions():
 readRestaurant()
 readMentions()	
 #print type(mentions['apzxETosswLEoNIwHOh7nA'].restaurant)
-exactmatch = Match.ExactMatcher()
-exactmatch.matcher(mentions)
+#exactmatch = Match.ExactMatcher()
+#exactmatch.matcher(mentions)
+partialmatch = Match.PartialMatcher()
+partialmatch.matcher(mentions)
 print mentions['VmB6OWKb10tEy8o9EyNzYw'].items
 print restaurants['N5dkbfyNWZPxOMWDiJp7TQ'].items
+writeItemMention()
 
 
 
