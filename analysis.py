@@ -58,6 +58,10 @@ writeItemMention('a')
 substringMatch = Match.SubStringMatcher()
 substringMatch.matcher(mentions)
 writeItemMention('a')
+fuzzymatch = Match.FuzzyMatcher()
+fuzzymatch.matcher({'rwd1d8lup-8Tu4s3Ne5aqg':mentions['rwd1d8lup-8Tu4s3Ne5aqg']})
+writeItemMention('a')
+
 
 
 
