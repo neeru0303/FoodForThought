@@ -12,9 +12,12 @@ mentions={}
 def readRestaurant():
 	with open("data/restuarants.json") as restaurant :
 		for i in restaurant.readlines():
-			i=json.loads(i)
-			restaurants[i["business_id"]] = Restaurant(i["business_id"],i["name"],i["city"],i["stars"],i.get("items",[]))
-			#print i["business_id"],i["name"],i["city"],i["stars"]
+			try:
+				i=json.loads(i)
+				restaurants[i["business_id"]] = Restaurant(i["business_id"],i["name"],i["city"],i["stars"],i.get("items",[]))
+				#print i["business_id"],i["name"],i["city"],i["stars"]
+			except:
+				pass	
 			
 	#print restuarants
 
@@ -59,7 +62,7 @@ substringMatch = Match.SubStringMatcher()
 substringMatch.matcher(mentions)
 writeItemMention('a')
 fuzzymatch = Match.FuzzyMatcher()
-fuzzymatch.matcher({'rwd1d8lup-8Tu4s3Ne5aqg':mentions['rwd1d8lup-8Tu4s3Ne5aqg']})
+fuzzymatch.matcher(mentions)
 writeItemMention('a')
 
 
