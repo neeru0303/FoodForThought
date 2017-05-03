@@ -42,7 +42,7 @@ class FuzzyMatcher(Match):
 
 	def doMatch(self,mention):
 		for i in mention.restaurant.items:
-			print i,mention.mention.strip(),len(i)*2 , 	len(mention.mention.strip())
+			#print i,mention.mention.strip(),len(i)*2 , 	len(mention.mention.strip())
 			if abs(len(i) -len(mention.mention.strip())) >4 :
 				#print "yes"
 				continue

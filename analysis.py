@@ -17,7 +17,7 @@ def readRestaurant():
 				restaurants[i["business_id"]] = Restaurant(i["business_id"],i["name"],i["city"],i["stars"],i.get("items",[]))
 				#print i["business_id"],i["name"],i["city"],i["stars"]
 			except:
-				pass	
+				pass
 			
 	#print restuarants
 
