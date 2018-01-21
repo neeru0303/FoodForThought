@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from __future__ import unicode_literals
 import spacy
 from spacy.matcher import Matcher as Spacy_Matcher

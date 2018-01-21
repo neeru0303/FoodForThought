@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import re
 
 
@@ -16,9 +18,9 @@ class Mention:
         pattern = re.compile(r"[^a-zA-Z0-9]+")
         self.restaurant = restaurant
         self.review_id = reviewid
-        self.text = text
+        self.review_text = text
         self.bfrmention = mention
-        self.mention = pattern.sub(" ", mention)
+        self.mention_text = pattern.sub(" ", mention)
         self.sentiment = sentiment.strip()
         self.items = []
 

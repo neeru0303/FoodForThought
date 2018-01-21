@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 class Mention:
     def __init__(self, restaurant, reviewid, text, mention, sentiment):
         self.restaurant = restaurant

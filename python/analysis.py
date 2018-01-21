@@ -1,10 +1,13 @@
+#!/usr/bin/env python
+"""
+driver program to perform match of restaurant items and mentions in an review
+"""
 from __future__ import division
 import match
 import json
 import sys
 import logging
 import re
-
 
 from meta import Restaurant, Mention
 
@@ -23,10 +26,11 @@ def read_restaurant_data():
     with open("data/restuarants.json") as restaurants_data:
         for restaurant in restaurants_data.readlines():
             try:
-                #print re.match(r'^\s*$', restaurant).groups()
+                # print re.match(r'^\s*$', restaurant).groups()
                 restaurant = json.loads(restaurant)
-                restaurants[restaurant["business_id"]] = Restaurant(restaurant["business_id"], restaurant["name"], restaurant["city"], restaurant["stars"],
-                                                           restaurant.get("items", []))
+                restaurants[restaurant["business_id"]] = Restaurant(restaurant["business_id"], restaurant["name"],
+                                                                    restaurant["city"], restaurant["stars"],
+                                                                    restaurant.get("items", []))
             # print i["business_id"],i["name"],i["city"],i["stars"]
             except ValueError:
                 logger.error("Unable to parse data  {}".format(restaurant))
@@ -45,9 +49,12 @@ def write_item_mention(mode="w"):
             if len(mention.items) != 0:
                 file_mention.write("{restaurant_name}~{restaurant_items}~{review_id}~{review_text}~"
                                    "{mention_text}~{sentiment} \n".format(restaurant_name=mention.restaurant.name,
-                                                                             restaurant_items="-".join(mention.restaurant.items),
-                                                                             review_text=mention.text,sentiment=mention.sentiment,
-                                                                             review_id=mention.review_id,mention_text = mention.mention)
+                                                                          restaurant_items="-".join(
+                                                                              mention.restaurant.items),
+                                                                          review_text=mention.review_text,
+                                                                          sentiment=mention.sentiment,
+                                                                          review_id=mention.review_id,
+                                                                          mention_text=mention.mention_text)
                                    )
 
 
@@ -65,8 +72,6 @@ def read_mentions_data():
             # print type(mentions[i[1]].restaurant.items)
             except KeyError:
                 logger.debug(" Key not found for mention {}".format(mention[1]))
-
-
 
 
 if __name__ == "__main__":
