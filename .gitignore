@@ -2,6 +2,7 @@
 *.class
 *.zip
 .idea
+logs/
 
 # For Hive
 TempStatsStore/

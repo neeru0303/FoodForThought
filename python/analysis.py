@@ -23,7 +23,7 @@ def read_restaurant_data():
             except:
                 pass
 
-            # print restuarants
+                # print restuarants
 
 
 def write_item_mention(x):
@@ -49,30 +49,23 @@ def read_mentions_data():
                 pass
 
 
-read_restaurant_data()
-read_mentions_data()
-# print type(mentions['apzxETosswLEoNIwHOh7nA'].restaurant)
-exact_match = match.ExactMatcher()
-exact_match.matcher(mentions)
-write_item_mention('w')
-partial_match = match.PartialMatcher()
-partial_match.matcher(mentions)
-print mentions['Ht3HiWbSPbzAJ7TnQJtKhQ'].bfrmention
-print mentions['Ht3HiWbSPbzAJ7TnQJtKhQ'].mention
-print mentions['VmB6OWKb10tEy8o9EyNzYw'].items
-print restaurants['N5dkbfyNWZPxOMWDiJp7TQ'].items
-write_item_mention('a')
-substring_match = match.SubStringMatcher()
-substring_match.matcher(mentions)
-write_item_mention('a')
-fuzzy_match = match.FuzzyMatcher()
-fuzzy_match.matcher(mentions)
-write_item_mention('a')
-
-"""
-exactmatch = Match.ExactMatcher()
-with open("data/mention.txt") as mention:
-	x=exactmatch.matcher(mention.readlines())
-	if x is not None:
-		print x
-"""
+if __name__ == "__main__":
+    read_restaurant_data()
+    read_mentions_data()
+    # print type(mentions['apzxETosswLEoNIwHOh7nA'].restaurant)
+    exact_match = match.ExactMatcher()
+    exact_match.matcher(mentions)
+    write_item_mention('w')
+    partial_match = match.PartialMatcher()
+    partial_match.matcher(mentions)
+    print mentions['Ht3HiWbSPbzAJ7TnQJtKhQ'].bfrmention
+    print mentions['Ht3HiWbSPbzAJ7TnQJtKhQ'].mention
+    print mentions['VmB6OWKb10tEy8o9EyNzYw'].items
+    print restaurants['N5dkbfyNWZPxOMWDiJp7TQ'].items
+    write_item_mention('a')
+    substring_match = match.SubStringMatcher()
+    substring_match.matcher(mentions)
+    write_item_mention('a')
+    fuzzy_match = match.FuzzyMatcher()
+    fuzzy_match.matcher(mentions)
+    write_item_mention('a')
