@@ -2,6 +2,9 @@ from __future__ import division
 import match
 import json
 import sys
+import logging
+import re
+
 
 from meta import Restaurant, Mention
 
@@ -13,59 +16,95 @@ mentions = {}
 
 
 def read_restaurant_data():
-    with open("data/restuarants.json") as restaurant:
-        for i in restaurant.readlines():
+    """
+    Read restaurant data to generate Restaurant meta
+    :return:
+    """
+    with open("data/restuarants.json") as restaurants_data:
+        for restaurant in restaurants_data.readlines():
             try:
-                i = json.loads(i)
-                restaurants[i["business_id"]] = Restaurant(i["business_id"], i["name"], i["city"], i["stars"],
-                                                           i.get("items", []))
+                #print re.match(r'^\s*$', restaurant).groups()
+                restaurant = json.loads(restaurant)
+                restaurants[restaurant["business_id"]] = Restaurant(restaurant["business_id"], restaurant["name"], restaurant["city"], restaurant["stars"],
+                                                           restaurant.get("items", []))
             # print i["business_id"],i["name"],i["city"],i["stars"]
-            except:
-                pass
+            except ValueError:
+                logger.error("Unable to parse data  {}".format(restaurant))
+            except Exception as e:
+                logger.error("Read restaurant failed because of {} ".format(e))
 
-                # print restuarants
 
-
-def write_item_mention(x):
-    with open("data/mentionWithItems.txt", x) as file_mention:
-        for i in mentions:
-            if len(mentions[i].items) != 0:
-                mention = mentions[i]
-                file_mention.write(
-                    mention.restaurant.restaurantid + "~" + mention.reviewid + "~" + mention.mention + "~" + mention.sentiment + "~" + "-".join(
-                        mention.items))
-                file_mention.write("\n")
+def write_item_mention(mode="w"):
+    """
+    Save mention data with match
+    :param mode: w = Write or a = Append
+    :return:
+    """
+    with open("data/mentionWithItems.txt", mode=mode) as file_mention:
+        for restaurant, mention in mentions.items():
+            if len(mention.items) != 0:
+                file_mention.write("{restaurant_name}~{restaurant_items}~{review_id}~{review_text}~"
+                                   "{mention_text}~{sentiment} \n".format(restaurant_name=mention.restaurant.name,
+                                                                             restaurant_items="-".join(mention.restaurant.items),
+                                                                             review_text=mention.text,sentiment=mention.sentiment,
+                                                                             review_id=mention.review_id,mention_text = mention.mention)
+                                   )
 
 
 def read_mentions_data():
-    with open("data/mention.txt") as mention:
-        for i in mention.readlines():
-            i = i.split("~")
+    """
+    read mention data before match
+    :return:
+    """
+    with open("data/mention.txt") as mentions_data:
+        for mention in mentions_data.readlines():
+            mention = mention.split("~")
             try:
                 # print len(i)
-                mentions[i[1]] = Mention(restaurants[i[0]], i[1], i[2], i[3], i[4])
+                mentions[mention[1]] = Mention(restaurants[mention[0]], mention[1], mention[2], mention[3], mention[4])
             # print type(mentions[i[1]].restaurant.items)
-            except:
-                pass
+            except KeyError:
+                logger.debug(" Key not found for mention {}".format(mention[1]))
+
+
 
 
 if __name__ == "__main__":
-    read_restaurant_data()
-    read_mentions_data()
-    # print type(mentions['apzxETosswLEoNIwHOh7nA'].restaurant)
-    exact_match = match.ExactMatcher()
-    exact_match.matcher(mentions)
-    write_item_mention('w')
-    partial_match = match.PartialMatcher()
-    partial_match.matcher(mentions)
-    print mentions['Ht3HiWbSPbzAJ7TnQJtKhQ'].bfrmention
-    print mentions['Ht3HiWbSPbzAJ7TnQJtKhQ'].mention
-    print mentions['VmB6OWKb10tEy8o9EyNzYw'].items
-    print restaurants['N5dkbfyNWZPxOMWDiJp7TQ'].items
-    write_item_mention('a')
-    substring_match = match.SubStringMatcher()
-    substring_match.matcher(mentions)
-    write_item_mention('a')
-    fuzzy_match = match.FuzzyMatcher()
-    fuzzy_match.matcher(mentions)
-    write_item_mention('a')
+
+    try:
+        logger = logging.getLogger("Analysis started ")
+        file_handler = logging.FileHandler("logs/analysis.log", mode="w")
+        format_handler = logging.Formatter(fmt="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+        file_handler.setFormatter(format_handler)
+        logger.addHandler(file_handler)
+        logger.setLevel(logging.INFO)
+
+        logger.info("Read restaurant data")
+        read_restaurant_data()
+        logger.info("Read mention data")
+        read_mentions_data()
+
+        logger.info("Start exact match")
+        exact_match = match.ExactMatcher()
+        exact_match.matcher(mentions)
+        write_item_mention(mode='w')
+
+        logger.info("Start partial match")
+        partial_match = match.PartialMatcher()
+        partial_match.matcher(mentions)
+        write_item_mention(mode='a')
+
+        logger.info("Start substring match")
+        substring_match = match.SubStringMatcher()
+        substring_match.matcher(mentions)
+        write_item_mention(mode='a')
+
+        logger.info("Start fuzzy match")
+        fuzzy_match = match.FuzzyMatcher()
+        fuzzy_match.matcher(mentions)
+        write_item_mention(mode='a')
+
+        logger.info("Analysis is successfully completed")
+
+    except Exception as e:
+        logger.error("Analysis failed because of {}".format(e))

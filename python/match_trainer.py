@@ -211,6 +211,8 @@ def extract_mention_reviews(matcher):
 if __name__ == "__main__":
     logger = logging.getLogger("Train_Matcher")
     file_handler = logging.FileHandler("logs/train_matcher.log", mode="w")
+    format_handler = logging.Formatter(fmt="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+    file_handler.setFormatter(format_handler)
     logger.addHandler(file_handler)
     args = parse_args()
     if args.log_level == "INFO":

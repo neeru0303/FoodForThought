@@ -2,8 +2,8 @@ import re
 
 
 class Restaurant:
-    def __init__(self, restaurantid, name, city, rating, items=['fries']):
-        self.restaurantid = restaurantid
+    def __init__(self, restaurant_id, name, city, rating, items=['fries']):
+        self.restaurant_id = restaurant_id
         self.name = name
         self.rating = rating
         self.city = city
@@ -15,12 +15,12 @@ class Mention:
         # print type(restaurant)
         pattern = re.compile(r"[^a-zA-Z0-9]+")
         self.restaurant = restaurant
-        self.reviewid = reviewid
+        self.review_id = reviewid
         self.text = text
         self.bfrmention = mention
         self.mention = pattern.sub(" ", mention)
         self.sentiment = sentiment.strip()
         self.items = []
 
-    def addItem(self, item):
+    def add_item(self, item):
         self.items.append(item)

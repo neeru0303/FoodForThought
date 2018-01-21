@@ -14,21 +14,21 @@ class Match:
         x = []
         for i in mentions:
             if mentions[i].text != "":
-                self.doMatch(mentions[i])
+                self.match_run(mentions[i])
 
-    def doMatch(self, mention):
-        pass
+    def match_run(self, mention):
+        raise Exception("match_run is not implemented")
 
 
 class ExactMatcher(Match):
-    def doMatch(self, mention):
+    def match_run(self, mention):
         for i in mention.restaurant.items:
             if i == mention.mention.strip():
-                mention.addItem(i)
+                mention.add_item(i)
 
 
 class FuzzyMatcher(Match):
-    def editDistance(self, str1, str2, m, n):
+    def edit_distance(self, str1, str2, m, n):
         d = [[0 for i in range(n + 1)] for j in range(m + 1)]
         # print m,n
         # print d
@@ -46,19 +46,19 @@ class FuzzyMatcher(Match):
                     d[i][j] = 1 + min(d[i][j - 1], d[i - 1][j - 1], d[i - 1][j])
         return d[m][n]
 
-    def doMatch(self, mention):
+    def match_run(self, mention):
         for i in mention.restaurant.items:
             # print i,mention.mention.strip(),len(i)*2 , 	len(mention.mention.strip())
             if abs(len(i) - len(mention.mention.strip())) > 4:
                 # print "yes"
                 continue
-            elif self.editDistance(i, mention.mention.strip(), len(i), len(mention.mention.strip())) < 4:
-                mention.addItem(i)
+            elif self.edit_distance(i, mention.mention.strip(), len(i), len(mention.mention.strip())) < 4:
+                mention.add_item(i)
             # print self.editDistance(i,mention.mention.strip(),len(i),len(mention.mention.strip()))
 
 
 class PartialMatcher(Match):
-    def doMatch(self, mention):
+    def match_run(self, mention):
         # print "yes"
         for i in mention.restaurant.items:
             cnt = 0
@@ -69,22 +69,21 @@ class PartialMatcher(Match):
                     matched.append(j)
             if cnt > len(self.pattern.split(i)) / 2:
                 # print i,mention.reviewid,cnt,mention.mention,matched,self.pattern.split(mention.mention.strip())
-                mention.addItem(i)
+                mention.add_item(i)
 
 
 class SubStringMatcher(Match):
-    def doMatch(self, mention):
+    def match_run(self, mention):
         for i in mention.restaurant.items:
             x = self.pattern.split(mention.mention.strip())
             for j in range(0, len(x), 2):
                 try:
                     x = re.search(" ".join(x[j:j + 2]), i).group()
-                    mention.addItem(i)
+                    mention.add_item(i)
                     break
                 except:
                     pass
 
 
 class SVMMatcher(Match):
-    def doMatch(self, mention):
-        pass
+    pass
