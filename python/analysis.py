@@ -3,12 +3,12 @@
 driver program to perform match of restaurant items and mentions in an review
 """
 from __future__ import division
-import match
-import json
+from __future__ import absolute_import
 import sys
+import json
 import logging
 import re
-
+import match
 from meta import Restaurant, Mention
 
 reload(sys)

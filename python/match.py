@@ -4,13 +4,9 @@ Module for various Match patterns
 
 """
 
-
-from meta import Restaurant, Mention
 import re
 
-
-
-class Match:
+class Match(object):
     """
     base class for all matches
     """
@@ -24,7 +20,7 @@ class Match:
         :return:
         """
         for i in mentions:
-            if mentions[i].text != "":
+            if mentions[i].mention_text != "":
                 self.match_run(mentions[i])
 
     def match_run(self, mention):
@@ -63,7 +59,8 @@ class FuzzyMatcher(Match):
     """
     Match to ignore typos
     """
-    def edit_distance(self, str1, str2, m, n):
+    @staticmethod
+    def edit_distance(str1, str2, m, n):
         """
         Calculate edit distance between 2 strings
         :param str1:
@@ -147,7 +144,6 @@ class PartialMatcher(Match):
                     cnt += 1
                     matched.append(j)
             if cnt > len(self._pattern.split(i)) / 2:
-                # print i,mention.reviewid,cnt,mention.mention_text,matched,self.pattern.split(mention.mention_text.strip())
                 mention.add_item(i)
 
 
