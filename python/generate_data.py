@@ -6,9 +6,9 @@ from pyspark.sql import *
 from pyspark import *
 
 BASE_PATH = os.getcwd()
-DATA_PATH = os.path.join(BASE_PATH, "data")
-RESTAURANT_REVIEWS_FILE = os.path.join(DATA_PATH, "yelp_academic_dataset_review.json")
-RESTAURANT_BUSINESS_FILE = os.path.join(DATA_PATH, "yelp_academic_dataset_business.json")
+DATA_PATH = os.path.join(BASE_PATH, "data/dataset")
+RESTAURANT_REVIEWS_FILE = os.path.join(DATA_PATH, "review.json")
+RESTAURANT_BUSINESS_FILE = os.path.join(DATA_PATH, "business.json")
 
 
 def process():
@@ -20,32 +20,32 @@ def process():
     spark = SparkSession.Builder().appName("Spark SQL basic example").getOrCreate()
 
     logger.info("Read reviews data")
-    review_df = spark.read.format("json").load(RESTAURANT_REVIEWS_FILE)
+    review_df = spark.read.format("json").load("file:///"+RESTAURANT_REVIEWS_FILE)
 
     logger.info("Read business data")
-    business_df = spark.read.format("json").load(RESTAURANT_BUSINESS_FILE)
+    business_df = spark.read.format("json").load("file:///"+RESTAURANT_BUSINESS_FILE)
     review_df.createOrReplaceTempView("reviews")
     business_df.createOrReplaceTempView("business")
 
-    review_df.persist()
-    business_df.persist()
+    #review_df.persist()
+    #business_df.persist()
 
     logger.info("Get restaurant business data")
-    restaurant_df = spark.sql("select distinct r1.* from (select business_id,new_column from business b1 "
+    restaurant_df = spark.sql("select distinct b1.* from (select business_id,new_column from business b1 "
                               "lateral view explode(categories) exploded_table as new_column) x,business b1 "
-                              "where x.business_id = r1.business_id and new_column in ('Food','Restaurants')")
+                              "where x.business_id = b1.business_id and new_column in ('Food','Restaurants')")
 
     restaurant_df.createOrReplaceTempView("restaurants")
 
     logger.info("Get restaurant business review data")
-    restaurant_reviews_df = spark.sql("select distinct r_b.* from restaurant r_b "
+    restaurant_reviews_df = spark.sql("select distinct r_b.* from restaurants r_b "
                                       "join reviews r on r_b.business_id = r.business_id").limit(1000)
 
     logger.info("Save restaurant business review data")
-    restaurant_reviews_df.repartition(1).write.format("json").save(os.path.join(DATA_PATH, "reviews_output"))
+    restaurant_reviews_df.repartition(1).write.format("json").save(os.path.join("file:///"+ DATA_PATH, "reviews_output"))
 
-    review_df.unpersist()
-    business_df.unpersist()
+    #review_df.unpersist()
+    #business_df.unpersist()
 
     spark.stop()
 

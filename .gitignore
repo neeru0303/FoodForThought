@@ -3,7 +3,7 @@
 *.zip
 .idea
 
-data/yelp*
+data/dataset
 
 # For Hive
 TempStatsStore/
