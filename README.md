@@ -9,6 +9,18 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```pip install spacy==1.9.0```  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```python -m spacy.en.download all```
 
+## Run
+
+### Cleanse data with spark
+`spark-submit python/generate_data.py --master local[4]  --driver-memory 2g --executor-memory 2g`
+
+### Train spacy matcher
+`python python/match_trainer.py
+
+### Run analysis
+`python python/analysis.py`
+
+
 
 
 ## Output
