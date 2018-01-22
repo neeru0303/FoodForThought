@@ -15,7 +15,7 @@
 `spark-submit python/generate_data.py --master local[4]  --driver-memory 2g --executor-memory 2g`
 
 ### Train spacy matcher
-`python python/match_trainer.py
+`python python/match_trainer.py`
 
 ### Run analysis
 `python python/analysis.py`
