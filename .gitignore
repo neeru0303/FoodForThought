@@ -2,7 +2,8 @@
 *.class
 *.zip
 .idea
-logs/
+
+data/yelp*
 
 # For Hive
 TempStatsStore/

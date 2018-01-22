@@ -77,7 +77,7 @@ def read_mentions_data():
 if __name__ == "__main__":
 
     try:
-        logger = logging.getLogger("Analysis started ")
+        logger = logging.getLogger("Mention Analysis")
         file_handler = logging.FileHandler("logs/analysis.log", mode="w")
         format_handler = logging.Formatter(fmt="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
         file_handler.setFormatter(format_handler)

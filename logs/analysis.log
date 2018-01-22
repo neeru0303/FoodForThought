@@ -1,0 +1,35 @@
+2018-01-21 15:47:51,443 - Analysis started  - INFO - Read restaurant data
+2018-01-21 15:47:51,492 - Analysis started  - ERROR - Unable to parse data  
+
+2018-01-21 15:47:51,493 - Analysis started  - ERROR - Unable to parse data  
+
+2018-01-21 15:47:51,493 - Analysis started  - ERROR - Unable to parse data  
+
+2018-01-21 15:47:51,495 - Analysis started  - ERROR - Unable to parse data  
+
+2018-01-21 15:47:51,500 - Analysis started  - ERROR - Unable to parse data  
+
+2018-01-21 15:47:51,510 - Analysis started  - ERROR - Unable to parse data  
+
+2018-01-21 15:47:51,523 - Analysis started  - ERROR - Unable to parse data  
+
+2018-01-21 15:47:51,523 - Analysis started  - ERROR - Unable to parse data  
+
+2018-01-21 15:47:51,523 - Analysis started  - ERROR - Unable to parse data  
+
+2018-01-21 15:47:51,523 - Analysis started  - ERROR - Unable to parse data   
+
+2018-01-21 15:47:51,532 - Analysis started  - ERROR - Unable to parse data  
+
+2018-01-21 15:47:51,534 - Analysis started  - ERROR - Unable to parse data  
+
+2018-01-21 15:47:51,538 - Analysis started  - ERROR - Unable to parse data  
+
+2018-01-21 15:47:51,540 - Analysis started  - ERROR - Unable to parse data  
+
+2018-01-21 15:47:53,165 - Analysis started  - INFO - Read mention data
+2018-01-21 15:47:53,890 - Analysis started  - INFO - Start exact match
+2018-01-21 15:47:54,162 - Analysis started  - INFO - Start partial match
+2018-01-21 15:47:54,732 - Analysis started  - INFO - Start substring match
+2018-01-21 15:47:56,436 - Analysis started  - INFO - Start fuzzy match
+2018-01-21 15:48:00,488 - Analysis started  - INFO - Analysis is successfully completed
