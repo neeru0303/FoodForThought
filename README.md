@@ -1,6 +1,27 @@
 # FoodForThought
 
-## prerequisite
+## Background 
+
+Normally, it is human nature to see product/restaurant review before purchasing/dininig. But it reviews doesn't quantify the product. For example if restaurant reviews are good doesn't mean that all dishes in the restaurant are good vice versa.
+
+## Solution
+
+Generate itemized sentiment of product using reviews.
+
+## Process
+1. Data preparation
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Get restaurant information. Name, Place, Reviews and Food Menu.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Get food details to generate food mentions from reviews
+
+2. Train matcher to extract mentions from review
+
+3. Match food menu item with mention to generate itemized sentiment.
+
+
+
+## Prerequisite
 - Python2.7 need to be installed
 - Scala2.10 need to be installed
 - Apache Spark need to be configured on local machine or cluster.
