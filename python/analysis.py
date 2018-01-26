@@ -28,7 +28,7 @@ def read_restaurant_data():
             try:
                 # print re.match(r'^\s*$', restaurant).groups()
                 restaurant = json.loads(restaurant)
-                restaurants[restaurant["business_id"]] = Restaurant(restaurant=restaurant["business_id"], name=restaurant["name"],
+                restaurants[restaurant["business_id"]] = Restaurant(restaurant_id=restaurant["business_id"], name=restaurant["name"],
                                                                     city=restaurant["city"], rating=restaurant["stars"],
                                                                     items=restaurant.get("items", []))
 
@@ -75,6 +75,8 @@ def read_mentions_data():
             # print type(mentions[i[1]].restaurant.items)
             except KeyError:
                 logger.debug(" Key not found for mention {}".format(mention[1]))
+            except IndexError:
+                logger.debug("Index Error for mention {}".format(mention[1]))
 
 
 if __name__ == "__main__":

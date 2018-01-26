@@ -32,7 +32,7 @@ class Mention(object):
         self.review_id = review_id
         self.review_text = review_text
         self.bfrmention = mention_text
-        self.mention_text = pattern.sub(" ", mention)
+        self.mention_text = pattern.sub(" ", mention_text)
         self.sentiment = sentiment.strip()
         self.items = []
 

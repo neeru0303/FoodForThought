@@ -20,8 +20,9 @@ class Match(object):
         :return:
         """
         for i in mentions:
-            if mentions[i].mention_text != "":
-                self.match_run(mentions[i])
+               if mentions[i].mention_text != "":
+                  self.match_run(mentions[i])
+
 
     def match_run(self, mention):
         """
@@ -109,14 +110,21 @@ class FuzzyMatcher(Match):
         edit_distance =  3
 
         """
-        for i in mention.restaurant.items:
-            # print i,mention.mention_text.strip(),len(i)*2 , 	len(mention.mention_text.strip())
-            if abs(len(i) - len(mention.mention_text.strip())) > 5:
-                # print "yes"
-                continue
-            elif self.edit_distance(i, mention.mention_text.strip(), len(i), len(mention.mention_text.strip())) <= 5:
-                mention.add_item(i)
-            # print self.editDistance(i,mention.mention_text.strip(),len(i),len(mention.mention_text.strip()))
+        try:
+            if not mention.mention_text.strip():
+                return
+            for i in mention.restaurant.items:
+                # print i,mention.mention_text.strip(),len(i)*2 , 	len(mention.mention_text.strip())
+                if abs(len(i) - len(mention.mention_text.strip())) > 5:
+                    # print "yes"
+                    continue
+                elif self.edit_distance(i, mention.mention_text.strip(), len(i), len(mention.mention_text.strip())) <= 5:
+                    mention.add_item(i)
+                # print self.editDistance(i,mention.mention_text.strip(),len(i),len(mention.mention_text.strip()))
+        except Exception as err:
+                print err
+                print len(mention.mention_text)
+                print mention.items
 
 
 class PartialMatcher(Match):
@@ -143,7 +151,7 @@ class PartialMatcher(Match):
                 if j in i and j not in matched and j != "":
                     cnt += 1
                     matched.append(j)
-            if cnt > len(self._pattern.split(i)) / 2:
+            if cnt > len(self._pattern.split(mention.mention_text.strip())) / 2:
                 mention.add_item(i)
 
 
