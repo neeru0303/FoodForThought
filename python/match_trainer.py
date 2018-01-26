@@ -18,10 +18,11 @@ from spacy.matcher import Matcher as Spacy_Matcher
 reload(sys)
 sys.setdefaultencoding('utf8')
 
+
 NLP = spacy.load('en')
 BASE_PATH = os.getcwd()
 DATA_PATH = os.path.join(BASE_PATH, "data")
-matcher_index = 1 # pylint: disable=C0103
+matcher_index = 0 # pylint: disable=C0103
 
 
 def parse_args():
@@ -213,6 +214,7 @@ def train_matcher():
     """
     matcher = Spacy_Matcher(NLP.vocab)
     food_details_path = os.path.join(DATA_PATH, "food_details")
+    subdetail_regex = re.compile(r'\(.*\)')
     for directory, dir_names, file_names in os.walk(food_details_path):
         for file_name in file_names:
             file_name = os.path.join(directory, file_name)
@@ -220,13 +222,14 @@ def train_matcher():
             with open(file_name, 'r') as f:
                 if not file_name.endswith("txt"):
                     continue
-                print file_name
                 for i in f.readlines():
                     i = i.decode("utf-8")
-                    i = i.lower().strip().replace('\n', '').replace(r"\(.*\)", "")
-
+                    i = i.lower().strip().replace('\n', '')
+                    i = subdetail_regex.sub("",i)
                     create_matcher(matcher, i)
+
         break
+
     return matcher
 
 
