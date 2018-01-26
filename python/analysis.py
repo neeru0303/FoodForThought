@@ -28,9 +28,10 @@ def read_restaurant_data():
             try:
                 # print re.match(r'^\s*$', restaurant).groups()
                 restaurant = json.loads(restaurant)
-                restaurants[restaurant["business_id"]] = Restaurant(restaurant["business_id"], restaurant["name"],
-                                                                    restaurant["city"], restaurant["stars"],
-                                                                    restaurant.get("items", []))
+                restaurants[restaurant["business_id"]] = Restaurant(restaurant=restaurant["business_id"], name=restaurant["name"],
+                                                                    city=restaurant["city"], rating=restaurant["stars"],
+                                                                    items=restaurant.get("items", []))
+
             # print i["business_id"],i["name"],i["city"],i["stars"]
             except ValueError:
                 logger.error("Unable to parse data  {}".format(restaurant))
@@ -68,7 +69,9 @@ def read_mentions_data():
             mention = mention.split("~")
             try:
                 # print len(i)
-                mentions[mention[1]] = Mention(restaurants[mention[0]], mention[1], mention[2], mention[3], mention[4])
+                mentions[mention[1]] = Mention(restaurant=restaurants[mention[0]],
+                                               review_id=mention[1], review_text=mention[2],
+                                               mention_text=mention[3], sentiment=mention[4])
             # print type(mentions[i[1]].restaurant.items)
             except KeyError:
                 logger.debug(" Key not found for mention {}".format(mention[1]))

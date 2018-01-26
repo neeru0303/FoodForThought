@@ -111,10 +111,10 @@ class FuzzyMatcher(Match):
         """
         for i in mention.restaurant.items:
             # print i,mention.mention_text.strip(),len(i)*2 , 	len(mention.mention_text.strip())
-            if abs(len(i) - len(mention.mention_text.strip())) > 4:
+            if abs(len(i) - len(mention.mention_text.strip())) > 5:
                 # print "yes"
                 continue
-            elif self.edit_distance(i, mention.mention_text.strip(), len(i), len(mention.mention_text.strip())) < 5:
+            elif self.edit_distance(i, mention.mention_text.strip(), len(i), len(mention.mention_text.strip())) <= 5:
                 mention.add_item(i)
             # print self.editDistance(i,mention.mention_text.strip(),len(i),len(mention.mention_text.strip()))
 

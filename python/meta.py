@@ -25,13 +25,13 @@ class Mention(object):
     """
     Class for Mention data
     """
-    def __init__(self, restaurant, reviewid, text, mention, sentiment):
+    def __init__(self, restaurant, review_id, review_text, mention_text, sentiment):
         # print type(restaurant)
         pattern = re.compile(r"[^a-zA-Z0-9]+")
         self.restaurant = restaurant
-        self.review_id = reviewid
-        self.review_text = text
-        self.bfrmention = mention
+        self.review_id = review_id
+        self.review_text = review_text
+        self.bfrmention = mention_text
         self.mention_text = pattern.sub(" ", mention)
         self.sentiment = sentiment.strip()
         self.items = []
