@@ -52,7 +52,7 @@ def merge_phrases(matcher, doc, i, matches):
         span.merge('NNP' if label else span.root.tag_, span.text, NLP.vocab.strings[label])
 
 
-def get_food_mentions(matcher, text):
+def get_food_mentions(text):
     """
     get food mention from review text
     :param matcher:
@@ -60,10 +60,12 @@ def get_food_mentions(matcher, text):
     :return:
     """
     text = NLP(text.lower())
+
     try:
-        matcher(text)
+        food_matcher(text)
     except:
         pass
+
     s = ""
     for ent in text:
         if ent.ent_type_ == 'FOOD':
@@ -233,7 +235,7 @@ def train_matcher():
     return matcher
 
 
-def extract_mention_reviews(matcher):
+def extract_mention_reviews():
     """
     Method to extract mention from restaurant data and write it to a file
     :param matcher:
@@ -247,7 +249,7 @@ def extract_mention_reviews(matcher):
                 logger.info("Review of Customer is {}".format(review))
                 review = json.loads(review)
                 review_text = review['text'].encode('utf-8').strip().decode('utf-8').replace('\n', ' ')
-                mention_text = get_food_mentions(matcher, review_text)
+                mention_text = get_food_mentions(review_text)
                 logger.info("Mention is {}".format(mention_text))
                 if mention_text != "":
                     mention.write(
@@ -272,7 +274,7 @@ if __name__ == "__main__":
         food_matcher = train_matcher() # pylint: disable=C0103
         logger.info("Completed train matcher")
         logger.info("Start mention extraction")
-        extract_mention_reviews(food_matcher)
+        extract_mention_reviews()
         logger.info("Completed mention extraction")
     except Exception as exp:
         logger.error("Train matcher failed because of {}".format(exp))
